@@ -3,8 +3,12 @@ package juke.postgresql;
 import juke.jdbc.JdbcDriver;
 import juke.jdbc.sqlbuilding.SqlBuilder;
 
-public class PgSqlDriver extends JdbcDriver {
+public class PgSqlDriver {
+    JdbcDriver jdbcDriver;
     public PgSqlDriver() {
-        super.setSqlBuilder(new PgSqlBuilder());
+        jdbcDriver = new JdbcDriver();
+        jdbcDriver.setSqlBuilder(new PgSqlBuilder());
     }
+
+
 }
